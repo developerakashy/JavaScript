@@ -9,9 +9,9 @@ let lastName = "Yadav"
 console.log(firstName , lastName)
 
 //boolean
-let isTrue = true
-let isFalse = false
-console.log(isTrue,isFalse)
+let isTrue = true // 1
+let isFalse = false // 0
+console.log(isFalse, isTrue)
 
 //null and undefined
 let variable = null //ocupies space but undifined not
@@ -28,4 +28,14 @@ const person = {
 
 }
 
-console.log(person)
+console.log(typeof person)
+
+
+//string + string => string
+//string + number => string
+//string - number => number
+//string - string => number
+// string * number => number
+console.log(('1' + 1))
+console.log('12' - '12')
+console.log('1' * 1) //string changed to number
