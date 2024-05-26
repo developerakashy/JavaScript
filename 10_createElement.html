@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Append Elements</h1>
+    <div id="container"></div>
+    <button id="btn">click</bitton>
+    <script>
+        const btn = document.querySelector("#btn")
+        const container = document.querySelector("#container")
+
+        var count = 1
+        btn.addEventListener("click", ()=>{
+            const p = document.createElement('h4')
+            p.innerText = count
+            container.appendChild(p)
+            count++
+        })
+    </script>
+</body>
+</html>

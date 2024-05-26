@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>This line number 1</p>
+    <p>This line number 2</p>
+    <p>This line number 3</p>
+    <p>This line number 4</p>
+    <p>This line number 5</p>
+    <button>click me!</button>
+
+</body>
+    <script>
+        const btn = document.querySelector('button')
+        const paras = document.querySelectorAll('p')
+        const allchild = document.querySelector('body').children
+        
+        console.log(allchild)
+        console.log(paras)
+
+        for(let i=0; i < paras.length; i++){
+            paras[i].addEventListener("click", ()=>{
+                paras[i].remove()
+            })
+            
+        }
+
+        // btn.addEventListener("click", ()=>{
+        //         console.log(paras)
+        // })
+    </script>
+</html>
