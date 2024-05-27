@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,button{
+            font-size: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Hi, my name is <span id="username"></span> :)</h1>
+    <input type="text" id="input-username" placeholder="Enter your name">
+    <button id="submit">submit</button>
+
+    <script>
+        const btn = document.getElementById("submit")
+        const input = document.getElementById("input-username")
+        const user = document.querySelector("#username")
+
+        btn.addEventListener('click', ()=>{
+            let value = input.value
+            localStorage.setItem("name", value)
+            location.reload()
+
+        })
+
+        window.addEventListener('load', ()=>{
+            let getName = localStorage.getItem('name')
+            console.log(getName)
+            user.innerText = getName
+
+        })
+    </script>
+</body>
+</html>
