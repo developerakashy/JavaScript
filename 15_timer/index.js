@@ -3,17 +3,19 @@ const stopBtn = document.querySelector("#stop")
 const startBtn = document.querySelector("#start")
 const resetBtn = document.querySelector("#reset")
 const inputs = document.querySelectorAll('input')
+
 let timer = null
 let timerInProgress = false
 
+let hours;
+let minutes;
+let seconds;
 
-
-stopBtn.addEventListener('click', ()=>{
+stopBtn.addEventListener('click', (event)=>{
     event.preventDefault()
     clearInterval(timer)
     timerInProgress = false
 })
-
 
 
 startBtn.addEventListener('click', ()=>{
@@ -43,6 +45,7 @@ startBtn.addEventListener('click', ()=>{
     timer = setInterval(timeDecrement, 1000)
 })
 
+
 resetBtn.addEventListener('click', ()=>{
     location.reload()
     timerInProgress = false
@@ -51,24 +54,18 @@ resetBtn.addEventListener('click', ()=>{
 
 
 
-let hours;
-let minutes;
-let seconds;
-
-
-
 
 function timeDecrement(){
         
         if(seconds > 0){
-            secondDecrement()
+            seconds -= 1
         }
         else if(minutes > 0){
-            minuteDecrement()
+            minutes -= 1
             seconds = 59
         }
         else if(hours > 0){
-            hourDecrement()
+            hours -= 1
             minutes = 59
             seconds = 59
         }
@@ -86,20 +83,8 @@ function timeDecrement(){
         inputs[1].value = minutes < 10 ? `0${minutes}` : minutes
         inputs[2].value = seconds < 10 ? `0${seconds}` : seconds
         
-        
-        function secondDecrement(){
-            seconds -= 1
-        }
-        
-        function minuteDecrement(){
-            minutes -= 1
-        }
-        
-        function hourDecrement(){
-            hours -= 1
-        }
 
         
-    }
+}
 
 
