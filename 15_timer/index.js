@@ -7,7 +7,6 @@ let timer = null
 let timerInProgress = false
 
 
-// let timer = setInterval(showTime, 1000)
 
 stopBtn.addEventListener('click', ()=>{
     event.preventDefault()
@@ -40,7 +39,7 @@ startBtn.addEventListener('click', ()=>{
     for(let i=0; i<inputs.length; i++){
         inputs[i].disabled = true
     }
-    // timeDecrement()
+    
     timer = setInterval(timeDecrement, 1000)
 })
 
@@ -52,19 +51,15 @@ resetBtn.addEventListener('click', ()=>{
 
 
 
-let hours = 0
-let minutes = 0
-let seconds = 0
-
-// function timeCalculation(hour, minute, second){
-    
+let hours;
+let minutes;
+let seconds;
 
 
-    function timeDecrement(){
+
+
+function timeDecrement(){
         
-        
-        
-        // time.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
         if(seconds > 0){
             secondDecrement()
         }
@@ -84,10 +79,9 @@ let seconds = 0
             }
 
             timerInProgress = false
-            console.log(seconds)
         }
     
-        console.log(hours,minutes,seconds)
+        
         inputs[0].value = hours < 10  ? `0${hours}` : hours
         inputs[1].value = minutes < 10 ? `0${minutes}` : minutes
         inputs[2].value = seconds < 10 ? `0${seconds}` : seconds
@@ -105,10 +99,7 @@ let seconds = 0
             hours -= 1
         }
 
-
-        
         
     }
 
 
-// }
